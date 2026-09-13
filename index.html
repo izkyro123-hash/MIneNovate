@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineNovate | Servicios Minecraft</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<header>
+<nav class="navbar">
+<div class="logo"><span>⛏</span> MineNovate</div>
+<div class="nav-links">
+<a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#solicitud">Solicitar</a>
+</div>
+</nav>
+</header>
+
+<section id="inicio" class="hero">
+<div class="hero-content">
+<div class="badge">🟢 SERVICIOS PARA MINECRAFT</div>
+<h1>Haz realidad tu <span>servidor Minecraft</span></h1>
+<p>¿Necesitas ayuda con tu servidor? Solicita construcciones, plugins, configuraciones, bots y mucho más.</p>
+<div class="hero-buttons">
+<a href="#solicitud" class="btn primary">🚀 Hacer una solicitud</a>
+<a href="#servicios" class="btn secondary">🎮 Ver servicios</a>
+</div>
+</div>
+</section>
+
+<section id="servicios" class="section">
+<div class="section-title"><span>¿QUÉ PUEDO HACER?</span><h2>Servicios Minecraft</h2><p>Elige qué necesitas para tu servidor.</p></div>
+<div class="services-grid">
+<div class="service-card"><div class="icon">🏗️</div><h3>Construcciones</h3><p>Spawn, mapas, lobbies, casas, ciudades y estructuras.</p></div>
+<div class="service-card"><div class="icon">⚙️</div><h3>Configuración</h3><p>Configuración y optimización de servidores Minecraft.</p></div>
+<div class="service-card"><div class="icon">🔌</div><h3>Plugins</h3><p>Instalación, configuración y personalización de plugins.</p></div>
+<div class="service-card"><div class="icon">🤖</div><h3>Bots de Discord</h3><p>Bots personalizados para conectar tu servidor con Discord.</p></div>
+<div class="service-card"><div class="icon">🌎</div><h3>Mapas</h3><p>Creación y configuración de mapas para diferentes modalidades.</p></div>
+<div class="service-card"><div class="icon">💻</div><h3>Desarrollo</h3><p>Sistemas personalizados y funcionalidades para tu servidor.</p></div>
+</div>
+</section>
+
+<section id="solicitud" class="section form-section">
+<div class="section-title"><span>🚀 EMPIEZA AHORA</span><h2>Solicita tu proyecto</h2><p>Completa el formulario y cuéntame qué necesitas.</p></div>
+<form id="minecraftForm" class="minecraft-form">
+<div class="form-group"><label for="name">👤 Tu nombre</label><input type="text" id="name" placeholder="Ej: Iz_kyro" required></div>
+<div class="form-group"><label for="discord">💬 Usuario de Discord</label><input type="text" id="discord" placeholder="Ej: iz_kyro" required></div>
+<div class="form-group"><label for="service">🛠️ ¿Qué necesitas?</label>
+<select id="service" required><option value="">Selecciona un servicio</option><option>🏗️ Construcción</option><option>🔌 Plugins</option><option>⚙️ Configuración</option><option>🤖 Bot de Discord</option><option>🌎 Mapa</option><option>💻 Desarrollo</option><option>✨ Otro</option></select></div>
+<div class="form-group"><label for="server">🎮 Tipo de servidor</label>
+<select id="server" required><option value="">Selecciona una opción</option><option>Survival</option><option>Skyblock</option><option>BedWars</option><option>PvP</option><option>Roleplay</option><option>Lobby</option><option>Otro</option></select></div>
+<div class="form-group"><label for="budget">💰 Presupuesto</label>
+<select id="budget"><option>No definido</option><option>Gratis</option><option>Bajo</option><option>Medio</option><option>Alto</option></select></div>
+<div class="form-group"><label for="description">📝 Describe tu proyecto</label><textarea id="description" rows="6" placeholder="Cuéntame qué quieres hacer..." required></textarea></div>
+<button type="submit" class="submit-btn">🚀 ENVIAR SOLICITUD</button>
+<div id="successMessage" class="success-message">✅ ¡Solicitud preparada correctamente!</div>
+</form>
+</section>
+
+<footer>
+<div class="footer-logo">⛏ MineNovate</div>
+<p>Servicios y desarrollo para servidores Minecraft.</p>
+<div class="footer-links"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#solicitud">Solicitar</a></div>
+<p class="copyright">© 2026 MineNovate. Todos los derechos reservados.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
