@@ -245,6 +245,13 @@ client.on("interactionCreate", async (interaction) => {
       const reason = interaction.options.getString("motivo") || "Sin motivo especificado";
       if (!target) return interaction.reply({ content: "No pude encontrar a ese miembro en el servidor.", ephemeral: true });
       if (target.id === interaction.user.id || target.id === client.user.id) return interaction.reply({ content: "No puedes aplicar esa acción a ese usuario.", ephemeral: true });
+      if (guild.ownerId !== interaction.user.id && target.roles.highest.position >= interaction.member.roles.highest.position) {
+        return interaction.reply({ content: "No puedes moderar a alguien con un rol igual o superior al tuyo.", ephemeral: true });
+      }
+      const botMember = await guild.members.fetchMe();
+      if (target.roles.highest.position >= botMember.roles.highest.position) {
+        return interaction.reply({ content: "Mi rol debe estar por encima del rol de ese miembro para aplicar esta acción.", ephemeral: true });
+      }
       if (commandName === "ban") await target.ban({ reason: `${reason} | Por: ${interaction.user.tag}` });
       if (commandName === "kick") await target.kick(`${reason} | Por: ${interaction.user.tag}`);
       if (commandName === "timeout") {
@@ -274,6 +281,7 @@ client.on("interactionCreate", async (interaction) => {
       const response = await fetch(`${base}/chat/completions`, {
         method: "POST",
         headers: { "Authorization": `Bearer ${process.env.AI_API_KEY}`, "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(30000),
         body: JSON.stringify({
           model: process.env.AI_MODEL || "gpt-4o-mini",
           messages: [
