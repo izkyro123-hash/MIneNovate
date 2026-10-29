@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: minenovate-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        value: "1548760971298734173"
+      - key: GUILD_ID
+        value: "1504240847183679622"
+      - key: WELCOME_CHANNEL_ID
+        value: "1549560539943014571"
+      - key: MOD_LOG_CHANNEL_ID
+        value: "1548713685734793376"
+      - key: MINECRAFT_HOST
+        value: "minenovate.play.hosting"
+      - key: MINECRAFT_PORT
+        value: "25565"
